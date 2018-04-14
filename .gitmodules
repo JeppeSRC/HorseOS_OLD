@@ -1,0 +1,3 @@
+[submodule "HorseEFI"]
+	path = HorseEFI
+	url = https://github.com/JeppeSRC/HorseEFI
