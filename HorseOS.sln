@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HorseLoader", "HorseLoader\HorseLoader.vcxproj", "{88ADCD7B-79CA-479A-88F6-6567B9123FE0}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HorseOS", "..\HorseOS\HorseOS.vcxproj", "{2DA3BAB7-F59E-4765-8F7D-209E17836491}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HorseOS", "HorseOS\HorseOS.vcxproj", "{2DA3BAB7-F59E-4765-8F7D-209E17836491}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
