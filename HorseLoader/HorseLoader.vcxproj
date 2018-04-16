@@ -90,6 +90,7 @@
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <CompileAs>CompileAsC</CompileAs>
       <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
+      <AdditionalOptions>/Gs999999 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
