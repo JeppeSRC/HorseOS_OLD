@@ -14,7 +14,7 @@ EFI_STATUS efi_main(EFI_HANDLE handle, EFI_SYSTEM_TABLE* systable) {
 		WaitEscapeAndExit();
 	}
 
-	UINT32 width = 1280;
+	UINT32 width = 1920;
 	UINT32 height = 0;
 	EFI_GRAPHICS_PIXEL_FORMAT format = PixelRedGreenBlueReserved8BitPerColor;
 
