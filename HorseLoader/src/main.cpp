@@ -1,5 +1,6 @@
 #include <efi.h>
 #include "util.h"
+#include "cmd/commandline.h"
 
 EFI_STATUS efi_main(EFI_HANDLE handle, EFI_SYSTEM_TABLE* systable) {
 	InitializeLibrary(handle, systable);
@@ -13,7 +14,7 @@ EFI_STATUS efi_main(EFI_HANDLE handle, EFI_SYSTEM_TABLE* systable) {
 		WaitEscapeAndExit();
 	}
 
-	UINT32 width = 1900;
+	UINT32 width = 1280;
 	UINT32 height = 0;
 	EFI_GRAPHICS_PIXEL_FORMAT format = PixelRedGreenBlueReserved8BitPerColor;
 
@@ -40,11 +41,9 @@ EFI_STATUS efi_main(EFI_HANDLE handle, EFI_SYSTEM_TABLE* systable) {
 
 	systable->ConIn->ReadKeyStroke(systable->ConIn, &key);
 
-	if (key.ScanCode == EFI_SCANCODE_F8) {
+	EnterPreBootCommandLine(handle, systable);
 
-	}
-	
-	WaitEscapeAndExit();
+	WaitEscapeAndExit(); 
 	
 	return EFI_SUCCESS;
 }
