@@ -4,15 +4,6 @@
 EFI_STATUS efi_main(EFI_HANDLE handle, EFI_SYSTEM_TABLE* systable) {
 	InitializeLibrary(handle, systable);
 
-	UINTN col = 0;
-	UINTN row = 0;
-
-	UINTN textModeIndex = GetTextMode(systable->ConOut, &col, &row);
-	systable->ConOut->SetMode(systable->ConOut, textModeIndex);
-
-	print(L"Booting.....\n");
-	printf(L"Setting text mode to %u -> %ux%u\n", textModeIndex, col, row);
-
 	EFI_GRAPHICS_OUTPUT_PROTOCOL* gop = 0;
 	EFI_GUID gopGuid = EFI_GRAPHICS_OUTPUT_PROTOCOL_GUID;
 	systable->BootServices->LocateProtocol(&gopGuid, 0, &gop);
@@ -32,9 +23,18 @@ EFI_STATUS efi_main(EFI_HANDLE handle, EFI_SYSTEM_TABLE* systable) {
 		println(L"No physical framebuffer support!");
 		WaitEscapeAndExit();
 	}
-	
+
 	gop->SetMode(gop, gopModeIndex);
+
+	UINTN col = 0;
+	UINTN row = 0;
+
+	UINTN textModeIndex = GetTextMode(systable->ConOut, &col, &row);
+	systable->ConOut->SetMode(systable->ConOut, textModeIndex);
+
+	print(L"Booting.....\n");
 	printf(L"Setting physical framebuffer to %u -> %ux%u %s\n", gopModeIndex, width, height, GetGraphicsPixelFormatString(format));
+	printf(L"Setting text mode to %u -> %ux%u\n", textModeIndex, col, row);
 
 	EFI_INPUT_KEY key;
 
