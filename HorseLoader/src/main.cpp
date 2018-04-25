@@ -41,7 +41,11 @@ EFI_STATUS efi_main(EFI_HANDLE handle, EFI_SYSTEM_TABLE* systable) {
 
 	systable->ConIn->ReadKeyStroke(systable->ConIn, &key);
 
-	EnterPreBootCommandLine(handle, systable, gop);
+	if (key.ScanCode == EFI_SCANCODE_F1) {
+		EnterPreBootCommandLine(handle, systable, gop);
+	}
+
+
 
 	WaitEscapeAndExit(); 
 	

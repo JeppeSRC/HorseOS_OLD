@@ -17,6 +17,7 @@ Global
 		{88ADCD7B-79CA-479A-88F6-6567B9123FE0}.Release|x64.ActiveCfg = Release|x64
 		{88ADCD7B-79CA-479A-88F6-6567B9123FE0}.Release|x64.Build.0 = Release|x64
 		{2DA3BAB7-F59E-4765-8F7D-209E17836491}.Release|x64.ActiveCfg = Release|x64
+		{2DA3BAB7-F59E-4765-8F7D-209E17836491}.Release|x64.Build.0 = Release|x64
 		{93099911-1BF6-46F1-875B-2979F5EEA3B0}.Release|x64.ActiveCfg = Release|x64
 		{93099911-1BF6-46F1-875B-2979F5EEA3B0}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
