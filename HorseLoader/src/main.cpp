@@ -36,13 +36,13 @@ EFI_STATUS efi_main(EFI_HANDLE handle, EFI_SYSTEM_TABLE* systable) {
 	print(L"Booting.....\n");
 	printf(L"Setting physical framebuffer to %u -> %ux%u %s\n", gopModeIndex, width, height, GetGraphicsPixelFormatString(format));
 	printf(L"Setting text mode to %u -> %ux%u\n", textModeIndex, col, row);
-	print(L"Press F1 to enter pre-boot commandline\n");
+	print(L"Press F1 to enter EFI commandline\n");
 	EFI_INPUT_KEY key;
 	systable->BootServices->Stall(3000000);
 	systable->ConIn->ReadKeyStroke(systable->ConIn, &key); 
 
 	if (key.ScanCode == EFI_SCANCODE_F1) {
-		EnterPreBootCommandLine(handle, systable, gop);
+		EnterEFICommandLine(handle, systable, gop);
 	}
 
 	print(L"Continuing\n");
