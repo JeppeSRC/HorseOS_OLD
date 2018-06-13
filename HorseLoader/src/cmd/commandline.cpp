@@ -74,8 +74,9 @@ VOID EnterPreBootCommandLine(EFI_HANDLE handle, EFI_SYSTEM_TABLE* systable, EFI_
 				Execute(currentLine, systable, gop);
 				memset(currentLine, 0, sizeof(currentLine));
 				currentChar = 0;
-				print(L"\nCMD: ");
 				currentRow = out->Mode->CursorRow;
+				out->SetCursorPosition(out, 0, currentRow);
+				print(L"CMD: ");
 			} else {
 				if (currentChar == HorseOS_MAX_CMD_LENGTH-1) continue;
 				currentLine[currentChar++] = key.UnicodeChar;
